@@ -64,7 +64,7 @@ function animateCounters() {
 function initFadeIn() {
     // Add fade-in class to elements
     const targets = document.querySelectorAll(
-        '.overview-card, .stat-card, .finding-block, .awareness-card, .profile-card, .timeline-item, .team-card, .red-flags'
+        '.overview-step, .stat-card, .finding-block, .awareness-card, .profile-card, .timeline-item, .team-card, .red-flags, .flyer-showcase'
     );
 
     targets.forEach(el => el.classList.add('fade-in'));

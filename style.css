@@ -54,14 +54,14 @@ body {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(255,255,255,0.95);
+    background: rgba(26, 26, 46, 0.97);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--gray-200);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
     transition: box-shadow 0.3s;
 }
 
 .navbar.scrolled {
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
 .nav-container {
@@ -97,14 +97,14 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--gray-700);
+    color: rgba(255,255,255,0.7);
     font-size: 0.9rem;
     font-weight: 500;
     transition: color 0.2s;
 }
 
 .nav-links a:hover {
-    color: var(--red);
+    color: var(--white);
 }
 
 .nav-toggle {
@@ -121,7 +121,7 @@ body {
     display: block;
     width: 24px;
     height: 2px;
-    background: var(--gray-800);
+    background: var(--white);
     border-radius: 2px;
     transition: 0.3s;
 }
@@ -249,43 +249,60 @@ body {
     color: rgba(255,255,255,0.65);
 }
 
-/* ===== OVERVIEW GRID ===== */
-.overview-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+/* ===== OVERVIEW STEPS ===== */
+.overview-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-left: 3px solid var(--red);
+    margin-left: 20px;
+}
+
+.overview-step {
+    display: flex;
+    align-items: flex-start;
     gap: 24px;
+    padding: 28px 0 28px 32px;
+    position: relative;
+    border-bottom: 1px solid var(--gray-200);
 }
 
-.overview-card {
-    background: var(--white);
-    border: 1px solid var(--gray-200);
-    border-radius: var(--radius);
-    padding: 32px 24px;
-    text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s;
+.overview-step:last-child {
+    border-bottom: none;
 }
 
-.overview-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
+.overview-step::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 34px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--red);
+    border: 3px solid var(--white);
 }
 
-.overview-icon {
-    font-size: 2.5rem;
-    margin-bottom: 16px;
+.step-number {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--gray-200);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 50px;
 }
 
-.overview-card h3 {
+.step-content h3 {
     font-size: 1.15rem;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     color: var(--gray-900);
 }
 
-.overview-card p {
-    font-size: 0.92rem;
+.step-content p {
+    font-size: 0.95rem;
     color: var(--gray-600);
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 /* ===== STATS GRID ===== */
@@ -766,12 +783,12 @@ body {
         top: 64px;
         left: 0;
         right: 0;
-        background: var(--white);
+        background: var(--dark-bg);
         flex-direction: column;
         padding: 16px 24px;
         gap: 16px;
-        border-bottom: 1px solid var(--gray-200);
-        box-shadow: var(--shadow-md);
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     }
 
     .nav-links.open {
