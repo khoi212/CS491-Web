@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicting Phishing Susceptibility | Bradley University CS 491</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="#" class="nav-logo">Bradley University <span>CS 491</span></a>
+        <ul class="nav-links">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#stats">Campaign Stats</a></li>
+            <li><a href="#findings">Key Findings</a></li>
+            <li><a href="#awareness">Protect Yourself</a></li>
+            <li><a href="#team">Team</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<header class="hero" id="top">
+    <div class="hero-content">
+        <p class="hero-tag">CS 491 Capstone Project &mdash; Spring 2026</p>
+        <h1>Predicting Phishing Susceptibility in University Populations</h1>
+        <p class="hero-subtitle">A data-driven study analyzing how Bradley University students respond to simulated phishing attacks &mdash; and what we can all learn from it.</p>
+        <div class="hero-actions">
+            <a href="#stats" class="btn btn-primary">View Campaign Results</a>
+            <a href="#awareness" class="btn btn-outline">Learn to Protect Yourself</a>
+        </div>
+    </div>
+</header>
+
+<!-- Overview Section -->
+<section class="section" id="overview">
+    <div class="container">
+        <h2 class="section-title">Project Overview</h2>
+        <p class="section-intro">Our team designed and executed a controlled phishing campaign targeting Bradley University students to understand who is most vulnerable to social engineering attacks and why.</p>
+
+        <div class="overview-grid">
+            <div class="overview-card">
+                <div class="overview-icon">&#128270;</div>
+                <h3>The Problem</h3>
+                <p>Phishing simulations at universities are often limited to reactive training. There is little understanding of <strong>why</strong> certain users fall victim or how to <strong>proactively</strong> predict and mitigate risk.</p>
+            </div>
+            <div class="overview-card">
+                <div class="overview-icon">&#127919;</div>
+                <h3>Our Approach</h3>
+                <p>We deployed a realistic phishing campaign using GoPhish, disguised as a "Late Night BU Online Raffle," alongside physical QR code posters placed across campus.</p>
+            </div>
+            <div class="overview-card">
+                <div class="overview-icon">&#128202;</div>
+                <h3>The Goal</h3>
+                <p>Use statistical analysis and machine learning to identify demographic patterns in phishing susceptibility and build a predictive framework for future awareness campaigns.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="section section-dark" id="stats">
+    <div class="container">
+        <h2 class="section-title">Campaign Results</h2>
+        <p class="section-intro">Our campaign was launched on February 13, 2026 and ran through the weekend until detection on February 16.</p>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" data-target="4803">0</div>
+                <div class="stat-label">Emails Sent</div>
+                <div class="stat-detail">Unique student inboxes targeted</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-target="80" data-suffix="%">0%</div>
+                <div class="stat-label">Open Rate</div>
+                <div class="stat-detail">3,828 emails were opened</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-target="436">0</div>
+                <div class="stat-label">Form Submissions</div>
+                <div class="stat-detail">Students who submitted personal info</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-target="9.1" data-suffix="%">0%</div>
+                <div class="stat-label">Submission Rate</div>
+                <div class="stat-detail">Of all targeted students</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-target="72" data-suffix="hrs">0hrs</div>
+                <div class="stat-label">Time to Detection</div>
+                <div class="stat-detail">Before the university responded</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-target="12">0</div>
+                <div class="stat-label">QR Posters Placed</div>
+                <div class="stat-detail">Across major campus buildings</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Key Findings Section -->
+<section class="section" id="findings">
+    <div class="container">
+        <h2 class="section-title">Key Findings</h2>
+        <p class="section-intro">Statistical analysis revealed significant demographic patterns in who fell for the phishing campaign.</p>
+
+        <!-- Gender Finding -->
+        <div class="finding-block">
+            <div class="finding-content">
+                <h3>Gender &amp; Susceptibility</h3>
+                <p>Women were <strong>1.64x more likely</strong> to submit information compared to men. The Chi-Square test confirmed a statistically significant association (p = 2.39 &times; 10<sup>-6</sup>).</p>
+                <div class="finding-table-wrapper">
+                    <table class="finding-table">
+                        <thead>
+                            <tr><th>Gender</th><th>Clicked</th><th>Didn't Click</th><th>Total</th><th>Click Rate</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Female</td><td>262</td><td>1,684</td><td>1,946</td><td class="highlight">13.46%</td></tr>
+                            <tr><td>Male</td><td>162</td><td>1,708</td><td>1,870</td><td>8.66%</td></tr>
+                            <tr class="total-row"><td>Total</td><td>424</td><td>3,392</td><td>3,816</td><td>11.11%</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Area of Study Finding -->
+        <div class="finding-block">
+            <div class="finding-content">
+                <h3>Area of Study</h3>
+                <p>Students in <strong>Arts &amp; Media</strong> were dramatically overrepresented among those who fell for the phishing email (std. residual +8.14), while <strong>Health Sciences</strong> students were significantly underrepresented (-2.54).</p>
+                <div class="chart-container">
+                    <div class="bar-chart">
+                        <div class="bar-row">
+                            <span class="bar-label">Arts &amp; Media</span>
+                            <div class="bar-track">
+                                <div class="bar-fill bar-danger" style="width: 100%"><span>+8.14</span></div>
+                            </div>
+                        </div>
+                        <div class="bar-row">
+                            <span class="bar-label">Engineering</span>
+                            <div class="bar-track">
+                                <div class="bar-fill bar-warning" style="width: 21%"><span>+1.72</span></div>
+                            </div>
+                        </div>
+                        <div class="bar-row">
+                            <span class="bar-label">Education</span>
+                            <div class="bar-track">
+                                <div class="bar-fill bar-neutral" style="width: 9%"><span>+0.72</span></div>
+                            </div>
+                        </div>
+                        <div class="bar-row">
+                            <span class="bar-label">Data/Tech</span>
+                            <div class="bar-track">
+                                <div class="bar-fill bar-neutral-neg" style="width: 5%"><span>-0.44</span></div>
+                            </div>
+                        </div>
+                        <div class="bar-row">
+                            <span class="bar-label">Social Sci</span>
+                            <div class="bar-track">
+                                <div class="bar-fill bar-neutral-neg" style="width: 14%"><span>-1.10</span></div>
+                            </div>
+                        </div>
+                        <div class="bar-row">
+                            <span class="bar-label">Business</span>
+                            <div class="bar-track">
+                                <div class="bar-fill bar-neutral-neg" style="width: 22%"><span>-1.82</span></div>
+                            </div>
+                        </div>
+                        <div class="bar-row">
+                            <span class="bar-label">Health Sci</span>
+                            <div class="bar-track">
+                                <div class="bar-fill bar-safe" style="width: 31%"><span>-2.54</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="chart-caption">Standardized residuals by area of study. Values beyond &plusmn;1.96 indicate statistically significant over/underrepresentation.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Age Finding -->
+        <div class="finding-block">
+            <div class="finding-content">
+                <h3>Age &amp; Phishing Susceptibility</h3>
+                <p>Younger students (under 24) were <strong>significantly overrepresented</strong> among respondents, while older students (25+) were underrepresented. This indicates an inverse relationship between age and phishing susceptibility.</p>
+                <div class="finding-table-wrapper">
+                    <table class="finding-table">
+                        <thead>
+                            <tr><th>Age Group</th><th>University Total</th><th>Campaign Submissions</th><th>Std. Residual</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Under 18-19</td><td>1,261</td><td>137</td><td>+0.60</td></tr>
+                            <tr><td>20-21</td><td>1,565</td><td>187</td><td class="highlight">+2.00</td></tr>
+                            <tr><td>22-24</td><td>616</td><td>86</td><td class="highlight">+2.81</td></tr>
+                            <tr><td>25-29</td><td>310</td><td>16</td><td class="danger">-2.83</td></tr>
+                            <tr><td>30-34</td><td>137</td><td>3</td><td class="danger">-2.96</td></tr>
+                            <tr><td>35-39</td><td>112</td><td>4</td><td class="danger">-2.22</td></tr>
+                            <tr><td>40-49</td><td>162</td><td>3</td><td class="danger">-3.36</td></tr>
+                            <tr><td>50-65+</td><td>79</td><td>2</td><td class="danger">-2.16</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Summary -->
+        <div class="profile-summary">
+            <div class="profile-card profile-high">
+                <h4>Most Susceptible Profile</h4>
+                <p>Younger female student enrolled in an <strong>Arts &amp; Media</strong> discipline</p>
+            </div>
+            <div class="profile-card profile-low">
+                <h4>Least Susceptible Profile</h4>
+                <p>Older male student enrolled in <strong>Health Sciences</strong></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Awareness Section -->
+<section class="section section-dark" id="awareness">
+    <div class="container">
+        <h2 class="section-title">Protect Yourself from Phishing</h2>
+        <p class="section-intro">Our campaign proved that even tech-savvy university students can be fooled. Here's how to spot and avoid phishing attacks.</p>
+
+        <div class="awareness-grid">
+            <div class="awareness-card">
+                <div class="awareness-number">1</div>
+                <h3>Check the Sender</h3>
+                <p>Always verify the sender's email address carefully. Phishing emails often use addresses that <strong>look similar</strong> to legitimate ones but have subtle differences (e.g., <code>bradIey.edu</code> vs <code>bradley.edu</code>).</p>
+            </div>
+            <div class="awareness-card">
+                <div class="awareness-number">2</div>
+                <h3>Hover Before You Click</h3>
+                <p>Before clicking any link, <strong>hover over it</strong> to see the actual URL. If the destination doesn't match what you expect, or uses an unfamiliar domain, don't click it.</p>
+            </div>
+            <div class="awareness-card">
+                <div class="awareness-number">3</div>
+                <h3>Beware of Urgency</h3>
+                <p>Phishing emails create a <strong>false sense of urgency</strong> &mdash; deadlines, limited-time offers, or threats. Our campaign used a fake raffle with a deadline to pressure quick action.</p>
+            </div>
+            <div class="awareness-card">
+                <div class="awareness-number">4</div>
+                <h3>Never Share Personal Info via Email</h3>
+                <p>Legitimate organizations will <strong>never ask for sensitive information</strong> like your student ID, password, or SSN through email or an unfamiliar form.</p>
+            </div>
+            <div class="awareness-card">
+                <div class="awareness-number">5</div>
+                <h3>Verify Through Official Channels</h3>
+                <p>If an email claims to be from your university, <strong>go directly to the official website</strong> or call the office. Don't rely on links or phone numbers in the email itself.</p>
+            </div>
+            <div class="awareness-card">
+                <div class="awareness-number">6</div>
+                <h3>Be Skeptical of "Free" Offers</h3>
+                <p>Our phishing email promised free consoles and merch. If an offer seems <strong>too good to be true</strong>, it probably is. Verify giveaways through official university social media.</p>
+            </div>
+            <div class="awareness-card">
+                <div class="awareness-number">7</div>
+                <h3>Watch for QR Codes Too</h3>
+                <p>Phishing isn't just email. Our campaign used <strong>physical QR code posters</strong> on campus. Always check where a QR code leads before entering any information.</p>
+            </div>
+            <div class="awareness-card">
+                <div class="awareness-number">8</div>
+                <h3>Report Suspicious Emails</h3>
+                <p>If you receive a suspicious email, <strong>report it</strong> to your university's IT security office. At Bradley, contact the Office of Information Security. Reporting helps protect everyone.</p>
+            </div>
+        </div>
+
+        <!-- Red Flags Callout -->
+        <div class="red-flags">
+            <h3>Red Flags in Our Phishing Email</h3>
+            <p>Here are the warning signs that were present in the "Late Night BU Online Raffle" email we sent:</p>
+            <ul>
+                <li><strong>Too-good-to-be-true prizes</strong> &mdash; Nintendo Switch, PS5, Oculus 3s, and more</li>
+                <li><strong>Artificial deadline</strong> &mdash; "Submit before 8PM on February 26th"</li>
+                <li><strong>Pressure language</strong> &mdash; "Don't wait until the last minute"</li>
+                <li><strong>Unfamiliar link domain</strong> &mdash; The form link did not point to an official bradley.edu URL</li>
+                <li><strong>Requests for sensitive data</strong> &mdash; The form asked for Bradley ID numbers, GPA, and personal details</li>
+                <li><strong>No official verification</strong> &mdash; The event was not listed on any official Bradley University page</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Timeline Section -->
+<section class="section" id="timeline">
+    <div class="container">
+        <h2 class="section-title">Campaign Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">Feb 6</div>
+                <div class="timeline-content">
+                    <h4>Email Server Ready</h4>
+                    <p>GoPhish server deployed on Bradley's network with DKIM authentication configured.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Feb 13</div>
+                <div class="timeline-content">
+                    <h4>Campaign Launched</h4>
+                    <p>4,803 phishing emails sent and QR code posters placed across 12 campus locations.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Feb 13-16</div>
+                <div class="timeline-content">
+                    <h4>Data Collection</h4>
+                    <p>436 students submitted personal information through the fake giveaway form. 80% of all emails were opened.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Feb 16</div>
+                <div class="timeline-content">
+                    <h4>Campaign Detected</h4>
+                    <p>A graduate student contacted Student Activities about the raffle, triggering internal escalation to university police.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Feb 16</div>
+                <div class="timeline-content">
+                    <h4>Incident Response</h4>
+                    <p>Office of Information Security sent a warning to all students. Team disclosed the authorized security assessment. Situation resolved within ~72 hours.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section class="section section-dark" id="team">
+    <div class="container">
+        <h2 class="section-title">Our Team</h2>
+        <p class="section-intro">Bradley University &mdash; College of Liberal Arts &amp; Sciences<br>Computer Science &amp; Information Systems Department</p>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-avatar">RB</div>
+                <h4>Ren&eacute;e Bilsborough</h4>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar">MC</div>
+                <h4>Miguel A Canelo</h4>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar">JO</div>
+                <h4>John Ocampo</h4>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar">KT</div>
+                <h4>Khoi Tran</h4>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar">JV</div>
+                <h4>Joshua S Vogel</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>Predicting Phishing Susceptibility in University Populations &mdash; CS 491 Capstone Project, Spring 2026</p>
+        <p>Bradley University &bull; Peoria, Illinois</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
