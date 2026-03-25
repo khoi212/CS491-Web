@@ -421,11 +421,35 @@ body {
     margin-top: 8px;
 }
 
+.evidence-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.evidence-item {
+    text-align: center;
+}
+
 .evidence-img {
     width: 100%;
     border-radius: var(--radius);
     border: 1px solid rgba(255,255,255,0.1);
     box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+.evidence-caption {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.5);
+    margin-top: 10px;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .evidence-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ===== ML ANALYSIS ===== */
@@ -675,6 +699,19 @@ body {
 .bar-neutral { background: linear-gradient(90deg, #adb5bd, #868e96); }
 .bar-neutral-neg { background: linear-gradient(90deg, #74c0fc, #4dabf7); }
 .bar-safe { background: linear-gradient(90deg, #40c057, #2f9e44); }
+
+.chart-container-dark {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.bar-label-light {
+    color: rgba(255,255,255,0.8);
+}
+
+.bar-track-dark {
+    background: rgba(255,255,255,0.08);
+}
 
 .chart-caption {
     margin-top: 16px;
