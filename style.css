@@ -559,6 +559,51 @@ body {
     font-size: 0.85rem;
 }
 
+/* Flyer Showcase */
+.flyer-showcase {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 36px;
+    align-items: center;
+    margin-bottom: 40px;
+    background: var(--dark-card);
+    border-radius: var(--radius);
+    padding: 32px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.flyer-image img {
+    width: 100%;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.flyer-info h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--red-light);
+}
+
+.flyer-info p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+@media (max-width: 768px) {
+    .flyer-showcase {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .flyer-image img {
+        max-width: 260px;
+        margin: 0 auto;
+    }
+}
+
 /* Red Flags */
 .red-flags {
     background: rgba(165, 28, 48, 0.15);
