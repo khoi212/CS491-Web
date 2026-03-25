@@ -17,9 +17,10 @@
         <a href="#" class="nav-logo"><img src="logo.svg" alt="Bradley University" class="nav-logo-img"></a>
         <ul class="nav-links">
             <li><a href="#overview">Overview</a></li>
-            <li><a href="#stats">Campaign Stats</a></li>
-            <li><a href="#findings">Key Findings</a></li>
-            <li><a href="#awareness">Protect Yourself</a></li>
+            <li><a href="#stats">Stats</a></li>
+            <li><a href="#findings">Findings</a></li>
+            <li><a href="#ml-analysis">ML</a></li>
+            <li><a href="#awareness">Awareness</a></li>
             <li><a href="#team">Team</a></li>
         </ul>
         <button class="nav-toggle" aria-label="Toggle navigation">
@@ -110,6 +111,57 @@
                 <div class="stat-label">QR Posters Placed</div>
                 <div class="stat-detail">Across major campus buildings</div>
             </div>
+        </div>
+
+        <!-- Engagement Source Breakdown -->
+        <div class="engagement-section">
+            <h3 class="subsection-title">Engagement by Source</h3>
+            <p class="subsection-intro">Our tracking system captured how students reached the phishing form across multiple channels.</p>
+            <div class="source-grid">
+                <div class="source-item">
+                    <div class="source-bar-wrap">
+                        <div class="source-bar" style="height: 88%"></div>
+                    </div>
+                    <div class="source-count">585</div>
+                    <div class="source-name">Email Link</div>
+                </div>
+                <div class="source-item">
+                    <div class="source-bar-wrap">
+                        <div class="source-bar" style="height: 7%"></div>
+                    </div>
+                    <div class="source-count">48</div>
+                    <div class="source-name">Email QR</div>
+                </div>
+                <div class="source-item">
+                    <div class="source-bar-wrap">
+                        <div class="source-bar" style="height: 3%"></div>
+                    </div>
+                    <div class="source-count">21</div>
+                    <div class="source-name">Poster</div>
+                </div>
+                <div class="source-item">
+                    <div class="source-bar-wrap">
+                        <div class="source-bar" style="height: 2%"></div>
+                    </div>
+                    <div class="source-count">11</div>
+                    <div class="source-name">Fizz Flyer</div>
+                </div>
+                <div class="source-item">
+                    <div class="source-bar-wrap">
+                        <div class="source-bar" style="height: 1%"></div>
+                    </div>
+                    <div class="source-count">3</div>
+                    <div class="source-name">Other</div>
+                </div>
+            </div>
+            <p class="source-total">Total tracked engagements: <strong>668</strong></p>
+        </div>
+
+        <!-- Campaign Evidence -->
+        <div class="evidence-section">
+            <h3 class="subsection-title">Campaign Evidence</h3>
+            <p class="subsection-intro">Real screenshots from the GoPhish dashboard, our tracking data, and student reactions on Fizz (anonymous social media).</p>
+            <img src="campaign-results.png" alt="Campaign results showing GoPhish dashboard, tracking data, and Fizz social media reaction" class="evidence-img">
         </div>
     </div>
 </section>
@@ -229,6 +281,68 @@
             <div class="profile-card profile-low">
                 <h4>Least Susceptible Profile</h4>
                 <p>Older male student enrolled in <strong>Health Sciences</strong></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Machine Learning & Clustering Section -->
+<section class="section section-dark" id="ml-analysis">
+    <div class="container">
+        <h2 class="section-title">Machine Learning Analysis</h2>
+        <p class="section-intro">We applied both supervised and unsupervised models to explore whether phishing susceptibility could be predicted from demographic data.</p>
+
+        <!-- Supervised Models -->
+        <div class="ml-block">
+            <h3 class="subsection-title-light">Supervised Models</h3>
+            <p class="ml-desc">Four supervised models were trained on demographic features (GPA, age, academic category) to predict submission behavior.</p>
+            <div class="model-grid">
+                <div class="model-card">
+                    <h4>Logistic Regression</h4>
+                    <p>Binary classification using the logistic function to estimate submission probability.</p>
+                </div>
+                <div class="model-card">
+                    <h4>Random Forest</h4>
+                    <p>Ensemble of decision trees aggregating predictions to reduce variance.</p>
+                </div>
+                <div class="model-card">
+                    <h4>Decision Tree</h4>
+                    <p>Splits data using Gini impurity to classify submitters vs. non-submitters.</p>
+                </div>
+                <div class="model-card">
+                    <h4>Linear Regression</h4>
+                    <p>Continuous prediction model applied to the binary outcome for comparison.</p>
+                </div>
+            </div>
+            <div class="ml-result">
+                <div class="ml-result-stat">ROC-AUC &asymp; 0.50</div>
+                <p>All models performed equivalent to random classification, indicating that demographic variables alone do not contain sufficient predictive information to reliably distinguish phishing submission behavior.</p>
+            </div>
+        </div>
+
+        <!-- K-Means Clustering -->
+        <div class="ml-block">
+            <h3 class="subsection-title-light">K-Means Clustering</h3>
+            <p class="ml-desc">Since supervised models couldn't predict susceptibility, we used unsupervised K-Means clustering (K=3) to identify distinct demographic profiles within the submission population.</p>
+            <div class="cluster-grid">
+                <div class="cluster-card">
+                    <div class="cluster-label">Cluster 0</div>
+                    <div class="cluster-size">13 submitters</div>
+                    <p>Older students (mean age 35.6), higher GPA (mean 3.70). Top field: Education &amp; Counseling.</p>
+                </div>
+                <div class="cluster-card">
+                    <div class="cluster-label">Cluster 1</div>
+                    <div class="cluster-size">268 submitters</div>
+                    <p>Traditional-age students (mean age 20.5), high GPA (mean 3.80). Top field: Engineering, Health Sciences.</p>
+                </div>
+                <div class="cluster-card">
+                    <div class="cluster-label">Cluster 2</div>
+                    <div class="cluster-size">156 submitters</div>
+                    <p>Traditional-age students (mean age 20.4), lower GPA (mean 3.10). Top field: Engineering, Health Sciences.</p>
+                </div>
+            </div>
+            <div class="ml-result">
+                <p>The clustering reveals that multiple distinct "types" of submitters exist, which can inform tailored phishing awareness strategies for different student groups. Demographics describe who fell for the campaign, even if they cannot predict who will.</p>
             </div>
         </div>
     </div>
@@ -360,26 +474,41 @@
     <div class="container">
         <h2 class="section-title">Our Team</h2>
         <p class="section-intro">Bradley University &mdash; College of Liberal Arts &amp; Sciences<br>Computer Science &amp; Information Systems Department</p>
+        <!-- Advisor -->
+        <div class="team-advisor-row">
+            <div class="team-card team-card-lg">
+                <div class="team-avatar team-advisor">TD</div>
+                <h4>Professor Tony Du</h4>
+                <p class="team-role">Project Advisor</p>
+                <a href="mailto:tdu@fsmail.bradley.edu" class="team-email">tdu@fsmail.bradley.edu</a>
+            </div>
+        </div>
+        <!-- Students -->
         <div class="team-grid">
             <div class="team-card">
-                <div class="team-avatar">RB</div>
-                <h4>Ren&eacute;e Bilsborough</h4>
-            </div>
-            <div class="team-card">
                 <div class="team-avatar">MC</div>
-                <h4>Miguel A Canelo</h4>
-            </div>
-            <div class="team-card">
-                <div class="team-avatar">JO</div>
-                <h4>John Ocampo</h4>
+                <h4>Miguel Canelo</h4>
+                <a href="mailto:mcanelo@mail.bradley.edu" class="team-email">mcanelo@mail.bradley.edu</a>
             </div>
             <div class="team-card">
                 <div class="team-avatar">KT</div>
                 <h4>Khoi Tran</h4>
+                <a href="mailto:ktran@mail.bradley.edu" class="team-email">ktran@mail.bradley.edu</a>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar">JO</div>
+                <h4>John Ocampo</h4>
+                <a href="mailto:jocampo@mail.bradley.edu" class="team-email">jocampo@mail.bradley.edu</a>
             </div>
             <div class="team-card">
                 <div class="team-avatar">JV</div>
                 <h4>Joshua S Vogel</h4>
+                <a href="mailto:jsvogel@mail.bradley.edu" class="team-email">jsvogel@mail.bradley.edu</a>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar">RB</div>
+                <h4>Ren&eacute;e Bilsborough</h4>
+                <a href="mailto:abilsborough@mail.bradley.edu" class="team-email">abilsborough@mail.bradley.edu</a>
             </div>
         </div>
     </div>
