@@ -508,12 +508,33 @@
             </div>
           </div>
           <div class="ml-result">
-            <div class="ml-result-stat">ROC-AUC &asymp; 0.50</div>
+            <div class="ml-result-stat">Random Forest</div>
+            <img
+              src="RandomForestFeatureImportanceUnModified.png"
+              alt="RandomForest Tree"
+              class="evidence-img"
+            />
             <p>
-              All models performed equivalent to random classification,
-              indicating that demographic variables alone do not contain
-              sufficient predictive information to reliably distinguish phishing
-              submission behavior.
+              The Random Forest Feature importance graph shows what
+              columns/features make the most impact on any of these ML
+              algorithms. Shows what affects what on how they rank.
+            </p>
+          </div>
+
+          <div class="ml-result">
+            <div class="ml-result-stat">Decision Tree</div>
+            <img
+              src="DecisionTreeInvolvement.png"
+              alt="Involvement Tree"
+              class="evidence-img"
+            />
+            <p>
+              The decision tree above was created using only the data collected
+              from Submissions. We achieved a believable accuracy score after
+              testing with different columns. Although this could be overfit due
+              to the fact of lack of samples in 4 of the leaf nodes. Regardless
+              if you look at the tree and follow it down a path you will see
+              where the prediction will land if given a sample.
             </p>
           </div>
         </div>
@@ -526,6 +547,11 @@
             unsupervised K-Means clustering (K=3) to identify distinct
             demographic profiles within the submission population.
           </p>
+          <img
+            src="K-MeansClusterChart1.png"
+            alt="K-Means Cluster Chart"
+            class="evidence-img"
+          />
           <div class="cluster-grid">
             <div class="cluster-card">
               <div class="cluster-label">Cluster 0</div>
